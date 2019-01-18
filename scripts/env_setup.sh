@@ -4,4 +4,5 @@
 
 init_env(){
     yum install vim unzip wget
+
 }
