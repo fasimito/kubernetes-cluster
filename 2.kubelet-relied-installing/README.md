@@ -98,5 +98,5 @@ check all the pods with command:
 
 wait for the images downloading. times later, you should found all the pods running.
 
-![image](https://github.com/fasimito/microservice-consul-template/blob/master/images/arche.jpg)
+![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/all-pods-status.jpg)
 
