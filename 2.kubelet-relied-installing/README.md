@@ -68,3 +68,35 @@ The IP address the API Server will advertise it's listening on. Specify '0.0.0.0
 Specify range of IP addresses for the pod network. If set, the control plane will automatically allocate CIDRs for every node.
 ```
 if you have got a success tip, I should give you a congratulation. or, please fellow the error and resolve it by lucky and courage.
+
+## Config kubectl
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+then add the flanneld network on master
+> kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
+then add all nodes into the cluster with the command tip of init
+> kubeadm join 192.168.116.128:6443 --token 6joyjx.mny5wqyn3jgrpyzl --discovery-token-ca-cert-hash sha256:1daa67ed061733bb7e6aaac155870519b1512f49b7a20b84bbcc076e59198ebd
+
+then, you can check the cluster status with the command on the master node:
+> kubectl get nodes
+
+you can check the cluster status.
+run the fellow commands for further more system requiring.
+```
+# yum install -y bash-completion
+# find / -name "bash_completion"
+/usr/share/bash-completion/bash_completion
+# source /usr/share/bash-completion/bash_completion
+# source <(kubectl completion bash)
+```
+check all the pods with command:
+> kubectl get pod --all-namespaces
+
+wait for the images downloading. times later, you should found all the pods running.
+
+![image](https://github.com/fasimito/microservice-consul-template/blob/master/images/arche.jpg)
+
