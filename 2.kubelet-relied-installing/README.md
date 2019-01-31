@@ -11,6 +11,6 @@ serial No. | operation | command | comments
 3 | Close the swap | vim /etc/fstab | Close the fstab's swap row
 4 | Make sure the timestamp is synchronized | yum -y install ntpdate | Use the 'ntpdate' to synchronize the date of servers
 5 | Prepare the docker images | see [How to make docker images](http://www.google.com) | prepare the kubenetes related docker images
-6 | Wait for a long time to get the pods referred images |  | there should need a long time waiting, or fellow step 5
+6 | Wait for a long time to get the pods referred images downloading and creating the pods |  | there should need a long time waiting, or fellow step 5
 -----
 
