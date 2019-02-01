@@ -31,3 +31,25 @@ Let's start a new nginx service.
 
 ![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/check-service-status.jpg)
 
+## Check the pods' details
+> kubectl describe po my-nginx
+
+the command would list all the nginx pods details:
+
+![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/pods-details.jpg)
+
+as list in the picture, the container's IP is : 10.244.1.2, and the port is 80/TCP so the fellow command:
+
+> curl http://10.244.1.2
+
+would get the nginx welcome page. the nginx is start successfully.
+
+## Check the Service's details
+the fellow command:
+> kubectl describe service/my-nginx
+
+would get all details:
+
+![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/check-service-details.jpg)
+
+
