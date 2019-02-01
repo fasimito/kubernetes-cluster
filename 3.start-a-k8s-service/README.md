@@ -59,3 +59,11 @@ as show in the image, the service's IP is a virtual IP and mapped the port 8080,
 would also get the nginx's welcome page. further more, the External IP is mapped to the real server's IP, so, if you want to access the nginx from the Explore, you need access the external IP. this ip is the server's real IP exposed to the public.
 
 ![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/access-from-ie.jpg)
+
+you can also check the IP table's rule for more details:
+
+> iptables-save | grep default/my-nginx
+
+![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/check-ip-tables.jpg)
+
+
