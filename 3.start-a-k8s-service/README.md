@@ -66,4 +66,11 @@ you can also check the IP table's rule for more details:
 
 ![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/check-ip-tables.jpg)
 
+## Other operations
 
+### delete pod & service
+> kubectl delete deployment,service my-nginx
+
+### check the sub-network
+> etcdctl ls -r |grep subnets  
+> etcdctl get /coreos.com/network/subnets/10.0.101.0-24  
