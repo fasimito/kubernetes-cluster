@@ -12,7 +12,7 @@ serial No. | operation | command | comments
 4 | Set the "net.bridge.bridge" | vim /etc/sysctl.d/k8s.conf | add net.bridge.bridge-nf-call-ip6tables = 1 and net.bridge.bridge-nf-call-iptables = 1, then execute sysctl -p /etc/sysctl.d/k8s.conf
 5 | Set the cgroupfs | docker info && cat /etc/systemd/system/kuberlet.service.d/10-kubeadm.conf | make sure the both group value equally.
 6 | Make sure the timestamp is synchronized | yum -y install ntpdate | Use the 'ntpdate' to synchronize the date of servers
-7 | Prepare the docker images | see [How to make docker images](http://www.google.com) | prepare the kubenetes related docker images
+7 | Prepare the docker images | see [How to make docker images](https://github.com/fasimito/kubernetes-cluster/tree/master/4.use-github-docker-make-images) | prepare the kubenetes related docker images
 8 | Wait for a long time to get the pods referred images downloading and creating the pods |  | there should need a long time waiting, or fellow step 5
 9 | Set the hostname and config the hosts file | hostnamectl set-hostname [server-name] | then config the /etc/hosts file, all servers' hostname must not equally, it would cause conflict.
 -----
