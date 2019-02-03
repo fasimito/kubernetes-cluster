@@ -14,7 +14,7 @@ the dockerfile is very simple:
 FROM k8s.gcr.io/kubernetes-dashboard-amd64:v1.10.1
 ```
 #### 1.2 link docker account and github account
-please login in the [docker hub](https://cloud.docker.com) firstly, then find the account links setting:
+please login in the [docker hub](https://cloud.docker.com) firstly, then find the "Linked Accounts" setting:
 
 ![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/docker-account-setting.jpg)
 
