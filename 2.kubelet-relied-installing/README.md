@@ -9,10 +9,20 @@ serial No. | operation | command | comments
 1 | Close the firewalld | systemctl disable firewalld && systemctl stop firewalld | firewalld would cause many ports could not be accessed
 2 | Close the Selinux | vim /etc/selinux/config | Selinux would cause the right lost
 3 | Close the swap | vim /etc/fstab | Close the fstab's swap row
-4 | Make sure the timestamp is synchronized | yum -y install ntpdate | Use the 'ntpdate' to synchronize the date of servers
-5 | Prepare the docker images | see [How to make docker images](http://www.google.com) | prepare the kubenetes related docker images
-6 | Wait for a long time to get the pods referred images downloading and creating the pods |  | there should need a long time waiting, or fellow step 5
+4 | set the "net.bridge.bridge" | vim /etc/sysctl.d/k8s.conf | add net.bridge.bridge-nf-call-ip6tables = 1 and net.bridge.bridge-nf-call-iptables = 1, then execute sysctl -p /etc/sysctl.d/k8s.conf
+5 | set the cgroupfs | docker info && cat /etc/systemd/system/kuberlet.service.d/10-kubeadm.conf | make sure the both group value equally.
+6 | Make sure the timestamp is synchronized | yum -y install ntpdate | Use the 'ntpdate' to synchronize the date of servers
+7 | Prepare the docker images | see [How to make docker images](http://www.google.com) | prepare the kubenetes related docker images
+8 | Wait for a long time to get the pods referred images downloading and creating the pods |  | there should need a long time waiting, or fellow step 5
 -----
+
+the step 4: set "net.bridge.bridge" would face the next error, and the solutions are next:
+
+ERROR | SOLUTION
+--- | ---
+error: "net.bridge.bridge-nf-call-ip6tables" is an unknow key | sudo modprobe bridge && sudo ismod grep bridge && sodo sysctl -p /etc/sysctl.d/k8s.conf
+sysctl: cannot stat /proc/sys/net/bridge/bridge-nf-call-ip6tables: No such file or folder | modprobe br_netfilter && ls /proc/sys/net/bridge && sudo sysctl -p /etc/sysctl.d/k8s.conf
+------
 
 ## Install kubelet, kubeadm and kubectl
 please make sure the preparation had been finished successfully, or, there are many kinds of errors.
