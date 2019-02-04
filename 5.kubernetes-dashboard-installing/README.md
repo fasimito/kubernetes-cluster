@@ -12,7 +12,7 @@ if you do so, there default TYPE is Cluster IP, that means, you could not access
 
 > wget https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
 
-and then do change it in the marked place:
+and then change it in the marked place:
 
 ![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/dashboard-modify-service.jpg)
 
