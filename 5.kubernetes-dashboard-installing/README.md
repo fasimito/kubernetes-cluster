@@ -32,3 +32,9 @@ to start the kubernetes dashboard service.
 
 ![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/dashboard-check-services.jpg)
 
+> kubectl describe svc kubernetes-dashboard -n kube-system
+
+![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/dashboard-get-services.jpg)
+
+
+
