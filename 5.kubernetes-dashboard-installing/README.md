@@ -39,3 +39,15 @@ to start the kubernetes dashboard service.
 then access the url: https://192.168.116.129:30001/login from the browser.
 
 You should face many new problem when you access the URL.
+
+as for me, I try to access the url with IE and safari I can't get any result except different kinds of error.
+finally, I choose the Firefox to get the result.
+
+![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/k8s-dashboard-ui.jpg)
+
+you need use the command:
+
+> kubectl create -f admin-user.yaml
+
+generate the token to access the url.
+
