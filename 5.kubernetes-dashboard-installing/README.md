@@ -36,5 +36,6 @@ to start the kubernetes dashboard service.
 
 ![image](https://github.com/fasimito/kubernetes-cluster/blob/master/images/dashboard-get-services.jpg)
 
+then access the url: https://192.168.116.129:30001/login from the browser.
 
-
+You should face many new problem when you access the URL.
