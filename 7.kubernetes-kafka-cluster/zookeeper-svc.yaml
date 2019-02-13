@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: zoo1
   labels:
-    app: zookeeper-1
+    app: zookeeper-cluster-service-1
+  name: zookeeper-cluster1
 spec:
   ports:
   - name: client
@@ -16,14 +16,14 @@ spec:
     port: 3888
     protocol: TCP
   selector:
-    app: zookeeper-1
+    app: zookeeper-cluster-service-1
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: zoo2
   labels:
-    app: zookeeper-2
+    app: zookeeper-cluster-service-2
+  name: zookeeper-cluster2
 spec:
   ports:
   - name: client
@@ -36,14 +36,14 @@ spec:
     port: 3888
     protocol: TCP
   selector:
-    app: zookeeper-2
+    app: zookeeper-cluster-service-2
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: zoo3
   labels:
-    app: zookeeper-3
+    app: zookeeper-cluster-service-3
+  name: zookeeper-cluster3
 spec:
   ports:
   - name: client
@@ -56,4 +56,4 @@ spec:
     port: 3888
     protocol: TCP
   selector:
-    app: zookeeper-3
+    app: zookeeper-cluster-service-3
