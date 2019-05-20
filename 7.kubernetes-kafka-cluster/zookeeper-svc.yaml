@@ -10,17 +10,17 @@ spec:
   - name: client
     port: 2181
     targetPort: 2181
-    nodePort: 10907
+    nodePort: 30701
     protocol: TCP
   - name: follower
     port: 2888
     targetPort: 2888
-    nodePort: 10908
+    nodePort: 30702
     protocol: TCP
   - name: leader
     port: 3888
     targetPort: 3888
-    nodePort: 10909
+    nodePort: 30703
     protocol: TCP
   selector:
     app: zookeeper-1
@@ -37,17 +37,17 @@ spec:
   - name: client
     port: 2181
     targetPort: 2181
-    nodePort: 20907
+    nodePort: 30704
     protocol: TCP
   - name: follower
     port: 2888
     targetPort: 2888
-    nodePort: 20908
+    nodePort: 30705
     protocol: TCP
   - name: leader
     port: 3888
     targetPort: 3888
-    nodePort: 20909
+    nodePort: 30706
     protocol: TCP
   selector:
     app: zookeeper-2
@@ -64,17 +64,17 @@ spec:
   - name: client
     port: 2181
     targetPort: 2181
-    nodePort: 30907
+    nodePort: 30707
     protocol: TCP
   - name: follower
     port: 2888
     targetPort: 2888
-    nodePort: 30908
+    nodePort: 30708
     protocol: TCP
   - name: leader
     port: 3888
     targetPort: 3888
-    nodePort: 30909
+    nodePort: 30709
     protocol: TCP
   selector:
     app: zookeeper-3
