@@ -21,15 +21,17 @@ spec:
         - containerPort: 9092
         env:
         - name: KAFKA_ADVERTISED_PORT
-          value: "9092"
+          value: "30901"
         - name: KAFKA_ADVERTISED_HOST_NAME
-          value: "10.109.210.207" #[kafka-service1的clusterIP]
+          value: "192.168.116.128" #[kafka-service1的clusterIP]
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: zoo1:2181,zoo2:2181,zoo3:2181
         - name: KAFKA_BROKER_ID
           value: "1"
-        - name: KAFKA_CREATE_TOPICS
-          value: mytopic:2:1
+        - name: KAFKA_MESSAGE_MAX_BYTES
+          value: 504857600
+        - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
+          value: false
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -55,13 +57,17 @@ spec:
         - containerPort: 9092
         env:
         - name: KAFKA_ADVERTISED_PORT
-          value: "9092"
+          value: "30902"
         - name: KAFKA_ADVERTISED_HOST_NAME
-          value: "10.110.16.208" # [kafka-service2的clusterIP]
+          value: "192.168.116.128" # [kafka-service2的clusterIP]
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: zoo1:2181,zoo2:2181,zoo3:2181
         - name: KAFKA_BROKER_ID
           value: "2"
+        - name: KAFKA_MESSAGE_MAX_BYTES
+          value: 504857600
+        - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
+          value: false
 ---
 kind: Deployment
 apiVersion: extensions/v1beta1
@@ -87,10 +93,14 @@ spec:
         - containerPort: 9092
         env:
         - name: KAFKA_ADVERTISED_PORT
-          value: "9092"
+          value: "30903"
         - name: KAFKA_ADVERTISED_HOST_NAME
-          value: "10.98.108.82" # [kafka-service3的clusterIP]
+          value: "192.168.116.128" # [kafka-service3的clusterIP]
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: zoo1:2181,zoo2:2181,zoo3:2181
         - name: KAFKA_BROKER_ID
           value: "3"
+        - name: KAFKA_MESSAGE_MAX_BYTES
+          value: 504857600
+        - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
+          value: false
