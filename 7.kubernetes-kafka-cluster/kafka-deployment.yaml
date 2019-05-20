@@ -29,7 +29,7 @@ spec:
         - name: KAFKA_BROKER_ID
           value: "1"
         - name: KAFKA_MESSAGE_MAX_BYTES
-          value: 504857600
+          value: 204857600
         - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
           value: false
 ---
@@ -65,7 +65,7 @@ spec:
         - name: KAFKA_BROKER_ID
           value: "2"
         - name: KAFKA_MESSAGE_MAX_BYTES
-          value: 504857600
+          value: 204857600
         - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
           value: false
 ---
@@ -101,6 +101,6 @@ spec:
         - name: KAFKA_BROKER_ID
           value: "3"
         - name: KAFKA_MESSAGE_MAX_BYTES
-          value: 504857600
+          value: 204857600
         - name: KAFKA_AUTO_CREATE_TOPICS_ENABLE
           value: false
